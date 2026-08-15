@@ -15,6 +15,18 @@ colors:
   red-deep: "#6f2213"
   amber: "#e2954f"
   led: "#ff5a3c"
+  # secondary material: the hero hang-tag reads as a real kraft-paper swing
+  # tag, so it carries its own small paper palette rather than the
+  # instrument ground — never used outside the tag.
+  kraft-paper: "#d9c48f"
+  kraft-ink: "#2c2213"
+  kraft-twine: "#8a7a52"
+  kraft-caption: "#4a3c22"
+  # secondary material: the nameplate's four corner rivets, a radial-gradient
+  # brushed-metal highlight/mid/shadow triad — never used outside the rivets.
+  rivet-highlight: "#d9d3c6"
+  rivet-mid: "#6b6459"
+  rivet-shadow: "#37322a"
 typography:
   display:
     fontFamily: "Big Shoulders Display, Arial Narrow, sans-serif"
@@ -30,10 +42,39 @@ typography:
   mono:
     fontFamily: "JetBrains Mono, ui-monospace, monospace"
     fontFeature: "tabular-nums"
+  # full rem scale used across UI text (see Typography section for role mapping)
+  scale:
+    micro: "0.55rem"
+    2xs: "0.68rem"
+    xs: "0.75rem"
+    label: "0.8rem"
+    sm: "0.85rem"
+    base-tight: "0.95rem"
+    base: "1rem"
+    md: "1.05rem"
+    lg: "1.35rem"
+    xl: "1.5rem"
+    # fluid clamp() endpoints used by headings/subtitles beyond the `display`
+    # role above — each is one named heading tier's own min/max, not a step
+    # meant to be picked standalone.
+    hero-subtitle-min: "1.05rem"
+    hero-subtitle-max: "1.2rem"
+    section-heading-max: "4rem"
+    hero-title-min: "2.75rem"
 rounded:
+  hairline: "1px"
   sm: "3px"
   md: "6px"
   lg: "10px"
+  full: "50%"
+shadows:
+  xs: "0 1px 0 rgba(0,0,0,.2)"
+  sm: "0 1px 2px rgba(0,0,0,.6)"
+  md: "0 18px 34px -14px rgba(0,0,0,.6)"
+  lg: "0 30px 60px -24px rgba(0,0,0,.65)"
+  xl: "0 40px 80px -30px rgba(0,0,0,.7)"
+  inset-highlight: "inset 0 1px 0 rgba(255,255,255,.06)"
+  inset-shade: "inset 0 -1px 0 rgba(0,0,0,.4)"
 spacing:
   edge: "clamp(1.25rem, 4vw, 4rem)"
 components:
@@ -83,9 +124,28 @@ Committed color strategy: a near-black charcoal ground carries the whole surface
 | Highlight | `amber` | `#e2954f` | Focus ring only |
 | Readout | `led` | `#ff5a3c` | Spec-sheet count-up glow only |
 
+Two secondary materials sit outside this ground palette and are never used past their one prop: the hang-tag's **kraft paper** family (`kraft-paper` / `kraft-ink` / `kraft-twine` / `kraft-caption`) makes it read as a real swing tag rather than a UI card, and the nameplate's **rivet** triad (`rivet-highlight` / `rivet-mid` / `rivet-shadow`) is the radial-gradient highlight/mid/shadow of four brushed-metal corner rivets.
+
 ## Typography
 
 Three families, each functionally justified rather than decorative: **Big Shoulders Display** (condensed industrial grotesk) carries every heading — its steelworks-adjacent character matches an equipment brand without leaning on an overused "editorial serif" or "SaaS geometric sans" default. **Archivo** carries body copy and UI labels — a technical, warm-enough grotesk with a full weight range. **JetBrains Mono** is reserved exclusively for measured or tabular content: spec-sheet figures, commercial terms (10%, 12x), the gauge label, the hang-tag countdown — never used as a generic "technical" costume on prose.
+
+Fixed rem scale (`typography.scale` in the frontmatter), reused consistently rather than picked ad hoc per component:
+
+| Step | Value | Used for |
+|---|---|---|
+| `micro` | `.55rem` | gauge label, nav sub-wordmark, nameplate unit suffix |
+| `2xs` | `.68rem` | field labels: terms strip, nameplate `dt`, footer label, ticket stub `dt` |
+| `xs` | `.75rem` | statement eyebrow, compare-table head, ticket eyebrow, faq intro copy |
+| `label` | `.8rem` | small button, callout index numeral, nameplate model line |
+| `sm` | `.85rem` | secondary meta: footer tagline/nameplate foot/ticket note/checklist sub-line |
+| `base-tight` | `.95rem` | primary button label, body copy inside constrained columns (callouts, table cells, faq answers) |
+| `base` | `1rem` | checklist headline |
+| `md` | `1.05rem` | nav wordmark, stamp center mark, large button, faq summary, footer name, nameplate brand, ticket stub value |
+| `lg` | `1.35rem` | callout heading |
+| `xl` | `1.5rem` | hang-tag countdown value |
+
+Fluid display steps (hero title, section headings, hero subtitle, nameplate figures) stay `clamp()`-driven rather than fixed — see the `display` token and the individual `clamp()` calls in `styles.css`. Two SVG-only labels (the circular stamp's curved text, `10.5px`/`9px`) are set in raw px because they live inside the stamp's own `viewBox` coordinate space, not the page's rem grid — sized to that badge, not the type ramp.
 
 Display sizes clamp between `2.1rem` and `6rem` (the craft ceiling); body measure stays 62ch; tracking never drops below the `-0.04em` floor.
 
@@ -95,11 +155,11 @@ Full-bleed sections alternate density deliberately: a dense hero, a quiet full-w
 
 ## Elevation & Depth
 
-Flat/matte for structural panels (nameplate, ticket) — depth is signaled through material (brushed-metal gradient texture, rivets, hairline rules) rather than shadow. Photography and floating elements (hero photo frame, hang-tag, ticket, FAB) carry soft, offset shadows (`0 40px 80px -30px rgba(0,0,0,.7)`-class values) — never a zero-offset colored glow standing in for depth.
+Flat/matte for structural panels (nameplate, ticket) — depth is signaled through material (brushed-metal gradient texture, rivets, hairline rules) rather than shadow. Photography and floating elements carry soft, offset shadows on a five-step ramp (`shadows` in the frontmatter, `xs`→`xl`) scaled to the element's own size — a tiny rivet gets `sm`, the hero photo frame gets `xl` — never a zero-offset colored glow standing in for depth. Panels needing a lit top edge (nameplate, rivets) add `inset-highlight`/`inset-shade` rather than a border.
 
 ## Shapes
 
-Small consistent radius (`3px` controls, `6–10px` panels) — enough to soften without softening into a generic rounded-SaaS register. Circular forms are reserved for the badge/stamp and gauge motifs, echoing the product's own dials and the logo's ring.
+Fixed radius scale (`rounded` in the frontmatter): `hairline` (1px, only for capping thin decorative strokes like the FAQ toggle bars — not a shape radius), `sm` (3px, controls, buttons, focus ring), `md` (6px, mid-size panels, scrollbar thumb), `lg` (10px, large panels: nameplate, ticket), `full` (50%, circles and pills — badge, dots, avatars, FAB). No arbitrary radius outside this scale.
 
 ## Components
 
