@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bello Volpi F-400 — A melhor pizza, no menor tempo</title>
+<meta name="description" content="Forno profissional a gás Bello Volpi F-400. Pizza pronta em até 2 minutos, sem lenha, sem fuligem. GLP ou gás natural. Pronta entrega em São Caetano do Sul, SP.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="Bello Volpi F-400 — A melhor pizza, no menor tempo">
+<meta property="og:description" content="Forno profissional a gás. Pizza pronta em até 2 minutos. GLP ou gás natural. Pronta entrega.">
+<meta property="og:image" content="assets/f400-ambient-web.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--
+THESIS: A gas oven proves itself the way a professional instrument does — on its own gauge face, not with lifestyle imagery. The category default (warm bakery lifestyle photography, rounded friendly cards, an orange/red gradient hero) is refused for a dark instrument-catalog register.
+OWN-WORLD: Near-black charcoal ground (#100e0c), one committed enamel red (#c23a24) carrying CTAs and structural bands, brushed-steel grey for secondary material, warm ember amber (#e2954f) reserved for glow/active states. Big Shoulders Display (condensed industrial caps) for headlines, Archivo for body/UI, JetBrains Mono for every tabular/measured figure — spec numbers, gauge readouts, countdown. Circular dotted-ring badge motif and analog gauge/needle drawn from the product's own control panel, reused as the site's own iconography and scroll-progress device.
+STORY: A pizzeria operator comparing gas vs. wood-fired sees a real professional instrument, reads its spec plate like a datasheet, trusts the 2-minute claim because it's presented with the same precision as the oven's own gauges, and opens WhatsApp to get price and freight.
+FIRST VIEWPORT: Full-bleed near-black hero. Left column: rotating dotted-ring "pronta entrega" stamp, oversized condensed headline "A MELHOR PIZZA. NO MENOR TEMPO.", subhead, two CTAs (WhatsApp primary, ficha técnica secondary). Right: the real ambient product photo at large scale with a hanging kraft spec-tag reading the 2-minute claim. A thin gauge-needle scroll indicator rides fixed at the left edge.
+FORM: Direction #5 of 7 (Instrument-catalog / premium equipment photography world), raised by direction #3 (officina workshop-badge signage, already true in the existing logo) for its dotted-ring badge and tracked-caps vocabulary, and by direction #1 (gas-gauge instrumentation) for its literal gauge/needle motif. Seed key 1f571f1b, assigned index 5, candidate-count 7, mode persuade.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
+
+<div class="gauge-progress" aria-hidden="true">
+  <svg viewBox="0 0 120 74" class="gauge-progress__dial">
+    <path d="M10,64 A54,54 0 0 1 110,64" class="gauge-progress__track"/>
+    <path d="M10,64 A54,54 0 0 1 110,64" class="gauge-progress__fill" id="gaugeFill"/>
+    <g class="gauge-progress__ticks">
+      <line x1="10" y1="64" x2="16" y2="58"/>
+      <line x1="24" y1="26" x2="29" y2="31"/>
+      <line x1="60" y1="10" x2="60" y2="17"/>
+      <line x1="96" y1="26" x2="91" y2="31"/>
+      <line x1="110" y1="64" x2="104" y2="58"/>
+    </g>
+    <line x1="60" y1="64" x2="60" y2="20" class="gauge-progress__needle" id="gaugeNeedle"/>
+    <circle cx="60" cy="64" r="4.5" class="gauge-progress__hub"/>
+  </svg>
+  <span class="gauge-progress__label">kgf/cm²</span>
+</div>
+
+<header class="nav" id="siteNav">
+  <div class="nav__inner">
+    <a href="#topo" class="nav__brand">
+      <img src="assets/bello-volpi-logo-sm.png" alt="Bello Volpi Fornos" class="nav__logo" width="44" height="44">
+      <span class="nav__wordmark">
+        <span class="nav__wordmark-main">BELLO VOLPI</span>
+        <span class="nav__wordmark-sub">FORNOS PROFISSIONAIS</span>
+      </span>
+    </a>
+    <nav class="nav__links" aria-label="Navegação principal">
+      <a href="#vantagens">Vantagens</a>
+      <a href="#ficha">Ficha técnica</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn--primary btn--small nav__cta" href="https://wa.me/5511940128477?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20forno%20Bello%20Volpi%20F-400%20e%20gostaria%20de%20receber%20valores%2C%20frete%20e%20condi%C3%A7%C3%B5es%20de%20pagamento.">
+      <svg class="icon-whatsapp" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.2.6 4.3 1.7 6.1L4 29l8.1-1.6c1.8.9 3.8 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3.9.9-4.2-.2-.4C5.8 17.9 5.3 16.5 5.3 15c0-5.9 4.8-10.7 10.7-10.7S26.7 9.1 26.7 15 21.9 24.8 16 24.8zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5S13 10 12.7 9.4c-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+      Falar com especialista
+    </a>
+    <button class="nav__burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <div class="stamp" role="img" aria-label="Selo: Pronta entrega, São Caetano do Sul, SP">
+          <svg viewBox="0 0 160 160" class="stamp__ring">
+            <circle cx="80" cy="80" r="74" class="stamp__dots"/>
+            <path id="stampCurveTop" d="M 15,80 A 65,65 0 0 1 145,80" fill="none"/>
+            <path id="stampCurveBottom" d="M 145,86 A 65,65 0 0 1 15,86" fill="none"/>
+            <text class="stamp__text"><textPath href="#stampCurveTop" startOffset="50%" text-anchor="middle">PRONTA ENTREGA</textPath></text>
+            <text class="stamp__text stamp__text--sm"><textPath href="#stampCurveBottom" startOffset="50%" text-anchor="middle">SÃO CAETANO DO SUL · SP</textPath></text>
+          </svg>
+          <span class="stamp__center">F—400</span>
+        </div>
+
+        <h1 class="hero__title">A melhor pizza.<br>No menor tempo.</h1>
+        <p class="hero__subtitle">Performance profissional para sua pizzaria produzir com ritmo, controle e a assinatura que seus clientes esperam.</p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://wa.me/5511940128477?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20forno%20Bello%20Volpi%20F-400%20e%20gostaria%20de%20receber%20valores%2C%20frete%20e%20condi%C3%A7%C3%B5es%20de%20pagamento.">
+            <svg class="icon-whatsapp" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.2.6 4.3 1.7 6.1L4 29l8.1-1.6c1.8.9 3.8 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3.9.9-4.2-.2-.4C5.8 17.9 5.3 16.5 5.3 15c0-5.9 4.8-10.7 10.7-10.7S26.7 9.1 26.7 15 21.9 24.8 16 24.8zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5S13 10 12.7 9.4c-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+            Quero conhecer o F-400
+          </a>
+          <a class="btn btn--ghost" href="#ficha">
+            Ver ficha técnica
+            <svg class="icon-arrow-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <dl class="terms-strip">
+          <div class="terms-strip__item">
+            <dt>Pix</dt>
+            <dd><span class="mono">10%</span> de desconto</dd>
+          </div>
+          <div class="terms-strip__item">
+            <dt>Cartão</dt>
+            <dd><span class="mono">12x</span> sem juros no total</dd>
+          </div>
+          <div class="terms-strip__item">
+            <dt>Frete</dt>
+            <dd>Todo o <span class="mono">Brasil</span>, sob consulta</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero__photo">
+        <div class="hero__photo-frame">
+          <img src="assets/f400-ambient-web.jpg" srcset="assets/f400-ambient-web-sm.jpg 900w, assets/f400-ambient-web.jpg 1800w" sizes="(max-width: 720px) 90vw, 640px" alt="Forno profissional Bello Volpi F-400, cúpula em alumínio escovado e corpo vermelho, em ambiente escuro com luz quente" width="1800" height="1800" fetchpriority="high">
+        </div>
+        <div class="hang-tag">
+          <span class="hang-tag__string" aria-hidden="true"></span>
+          <span class="hang-tag__eyebrow-stamp">F—400 · GLP/GN</span>
+          <span class="hang-tag__value mono">ATÉ 2 MIN</span>
+          <span class="hang-tag__caption">para sua pizza ficar pronta*</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRANSITION STATEMENT ============ -->
+  <section class="statement">
+    <p class="statement__eyebrow">Menos espera. Mais giro de salão.</p>
+    <h2 class="statement__title">Seu forno precisa acompanhar<br>o ritmo da sua pizzaria.</h2>
+  </section>
+
+  <!-- ============ FEATURES / ANNOTATED DIAGRAM ============ -->
+  <section class="diagram" id="vantagens">
+    <div class="diagram__intro">
+      <h2>Performance que aparece<br>em cada serviço.</h2>
+      <p>O F-400 une construção robusta, operação prática e o calor necessário para entregar consistência sem complicar a rotina.</p>
+    </div>
+
+    <div class="diagram__layout">
+      <div class="diagram__photo">
+        <img src="assets/f400-black-web.jpg" srcset="assets/f400-black-web-sm.jpg 900w, assets/f400-black-web.jpg 1800w" sizes="(max-width: 900px) 80vw, 460px" alt="Forno Bello Volpi F-400 sobre fundo preto, mostrando manômetro, visor da cúpula e cúpula em alumínio escovado" width="1800" height="1800" loading="lazy">
+      </div>
+
+      <ul class="callouts">
+        <li class="callout callout--a">
+          <span class="callout__index mono">01</span>
+          <svg class="callout__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34a14 14 0 1 1 0-28 14 14 0 0 1 0 28Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20 27 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="20" r="1.8" fill="currentColor"/></svg>
+          <div>
+            <h3>Ritmo de produção</h3>
+            <p>Pizza pronta em até 2 minutos para atender picos de movimento com mais fluidez.</p>
+          </div>
+        </li>
+        <li class="callout callout--b">
+          <span class="callout__index mono">02</span>
+          <svg class="callout__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M9 30h22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 30V16a6 6 0 0 1 12 0v14" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10 32 30M32 10 8 30" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg>
+          <div>
+            <h3>Operação limpa</h3>
+            <p>Sem lenha, fuligem ou armazenamento de combustível sólido no ambiente.</p>
+          </div>
+        </li>
+        <li class="callout callout--c">
+          <span class="callout__index mono">03</span>
+          <svg class="callout__icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="20" y1="9" x2="20" y2="13" stroke="currentColor" stroke-width="1.6"/><line x1="20" y1="27" x2="20" y2="31" stroke="currentColor" stroke-width="1.6"/><line x1="9" y1="20" x2="13" y2="20" stroke="currentColor" stroke-width="1.6"/><line x1="27" y1="20" x2="31" y2="20" stroke="currentColor" stroke-width="1.6"/><line x1="20" y1="20" x2="25" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div>
+            <h3>Controle prático</h3>
+            <p>Opere com gás GLP ou natural e acompanhe o preparo pelo visor da cúpula.</p>
+          </div>
+        </li>
+        <li class="callout callout--d">
+          <span class="callout__index mono">04</span>
+          <svg class="callout__icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="11" width="26" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="11.5" cy="15" r="1.2" fill="currentColor"/><circle cx="28.5" cy="15" r="1.2" fill="currentColor"/><circle cx="11.5" cy="25" r="1.2" fill="currentColor"/><circle cx="28.5" cy="25" r="1.2" fill="currentColor"/></svg>
+          <div>
+            <h3>Construção durável</h3>
+            <p>Corpo em alumínio pintado e cúpula em alumínio escovado para a rotina profissional.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ DESIGN & PERFORMANCE ============ -->
+  <section class="compact">
+    <div class="compact__photo">
+      <img src="assets/f400-black-web.jpg" srcset="assets/f400-black-web-sm.jpg 900w, assets/f400-black-web.jpg 1800w" sizes="(max-width: 900px) 100vw, 55vw" alt="Detalhe do forno Bello Volpi F-400 em fundo preto" width="1800" height="1800" loading="lazy">
+    </div>
+    <div class="compact__copy">
+      <h2>Compacto no espaço.<br>Grande na entrega.</h2>
+      <p>Desenvolvido para quem leva pizza a sério. O formato compacto facilita a instalação, enquanto o lastro de 454&nbsp;mm recebe pizzas de até 400&nbsp;mm.</p>
+
+      <ul class="checklist">
+        <li>
+          <svg class="checklist__mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong>Visor frontal</strong><span>acompanhe o preparo sem perder o ponto</span></div>
+        </li>
+        <li>
+          <svg class="checklist__mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong>Dois combustíveis</strong><span>disponível para GLP ou gás natural</span></div>
+        </li>
+        <li>
+          <svg class="checklist__mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong>Pronta entrega</strong><span>sujeita à disponibilidade no atendimento</span></div>
+        </li>
+      </ul>
+
+      <a class="btn btn--primary" href="https://wa.me/5511940128477?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20forno%20Bello%20Volpi%20F-400%20e%20gostaria%20de%20receber%20valores%2C%20frete%20e%20condi%C3%A7%C3%B5es%20de%20pagamento.">
+        <svg class="icon-whatsapp" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.2.6 4.3 1.7 6.1L4 29l8.1-1.6c1.8.9 3.8 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3.9.9-4.2-.2-.4C5.8 17.9 5.3 16.5 5.3 15c0-5.9 4.8-10.7 10.7-10.7S26.7 9.1 26.7 15 21.9 24.8 16 24.8zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5S13 10 12.7 9.4c-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+        Consultar disponibilidade
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FICHA TÉCNICA / NAMEPLATE ============ -->
+  <section class="specsheet" id="ficha">
+    <div class="specsheet__intro">
+      <h2>Ficha técnica<br>F-400.</h2>
+      <p>As informações essenciais para planejar a instalação do seu próximo forno.</p>
+    </div>
+
+    <div class="nameplate">
+      <span class="nameplate__rivet nameplate__rivet--tl" aria-hidden="true"></span>
+      <span class="nameplate__rivet nameplate__rivet--tr" aria-hidden="true"></span>
+      <span class="nameplate__rivet nameplate__rivet--bl" aria-hidden="true"></span>
+      <span class="nameplate__rivet nameplate__rivet--br" aria-hidden="true"></span>
+
+      <div class="nameplate__head">
+        <span class="nameplate__model mono">MODELO F—400</span>
+        <span class="nameplate__brand">BELLO VOLPI FORNOS</span>
+      </div>
+
+      <dl class="nameplate__grid">
+        <div><dt>Pizza</dt><dd class="mono" data-count-to="400">Ø 400 <span>mm</span></dd></div>
+        <div><dt>Lastro</dt><dd class="mono" data-count-to="454">454 <span>mm</span></dd></div>
+        <div><dt>Base</dt><dd class="mono" data-count-to="480">480 <span>mm</span></dd></div>
+        <div><dt>Altura</dt><dd class="mono" data-count-to="580">580 <span>mm</span></dd></div>
+        <div><dt>Peso</dt><dd class="mono" data-count-to="36">36 <span>kg</span></dd></div>
+        <div><dt>Gás</dt><dd class="mono">GLP / GN</dd></div>
+      </dl>
+
+      <p class="nameplate__foot">Cúpula escovada com visor e corpo com pintura · Alumínio</p>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON ============ -->
+  <section class="compare">
+    <div class="compare__intro">
+      <h2>A tradição da pizza.<br>Com uma operação mais prática.</h2>
+      <p>Cada operação tem suas necessidades. O F-400 é uma alternativa para quem busca praticidade, compactação e controle sem abrir mão do resultado.</p>
+    </div>
+
+    <div class="compare__table-wrap">
+      <table class="compare__table">
+        <thead>
+          <tr>
+            <th scope="col">Na rotina</th>
+            <th scope="col" class="compare__table-featured">Bello Volpi F-400</th>
+            <th scope="col">Forno a lenha tradicional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Espaço</th>
+            <td class="compare__table-featured">Estrutura compacta</td>
+            <td>Exige espaço para forno e lenha</td>
+          </tr>
+          <tr>
+            <th scope="row">Limpeza</th>
+            <td class="compare__table-featured">Sem cinzas ou fuligem da lenha</td>
+            <td>Demanda manejo de resíduos</td>
+          </tr>
+          <tr>
+            <th scope="row">Praticidade</th>
+            <td class="compare__table-featured">Controle a gás</td>
+            <td>Alimentação constante do fogo</td>
+          </tr>
+          <tr>
+            <th scope="row">Mobilidade</th>
+            <td class="compare__table-featured">Mais fácil de transportar</td>
+            <td>Instalação geralmente fixa</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ COMMERCIAL CTA / TICKET ============ -->
+  <section class="ticket-section">
+    <div class="ticket">
+      <div class="ticket__main">
+        <p class="ticket__eyebrow">Condições especiais</p>
+        <h2>Seu novo ritmo<br>começa agora.</h2>
+        <p class="ticket__lede">Fale diretamente com a Bello Volpi para receber preço, prazo e frete para o seu CEP.</p>
+        <a class="btn btn--primary btn--large" href="https://wa.me/5511940128477?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20forno%20Bello%20Volpi%20F-400%20e%20gostaria%20de%20receber%20valores%2C%20frete%20e%20condi%C3%A7%C3%B5es%20de%20pagamento.">
+          <svg class="icon-whatsapp" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.2.6 4.3 1.7 6.1L4 29l8.1-1.6c1.8.9 3.8 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3.9.9-4.2-.2-.4C5.8 17.9 5.3 16.5 5.3 15c0-5.9 4.8-10.7 10.7-10.7S26.7 9.1 26.7 15 21.9 24.8 16 24.8zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5S13 10 12.7 9.4c-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+          Receber preço e frete
+        </a>
+        <p class="ticket__note">Atendimento direto pelo WhatsApp Business</p>
+      </div>
+      <div class="ticket__perf" aria-hidden="true"></div>
+      <dl class="ticket__stub">
+        <div><dt class="mono">FORNO A GÁS</dt><dd>F-400</dd></div>
+        <div><dt class="mono">PIX</dt><dd>10% OFF</dd></div>
+        <div><dt class="mono">CARTÃO</dt><dd>ATÉ 12X</dd></div>
+        <div><dt class="mono">ESTOQUE</dt><dd>Pronta entrega*</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="duvidas">
+    <div class="faq__intro">
+      <h2>Antes de acender<br>o forno.</h2>
+      <p>Ainda ficou alguma dúvida? Nosso atendimento ajuda você a confirmar a melhor configuração para sua operação.</p>
+      <a class="btn btn--ghost" href="https://wa.me/5511940128477?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20forno%20Bello%20Volpi%20F-400%20e%20gostaria%20de%20receber%20valores%2C%20frete%20e%20condi%C3%A7%C3%B5es%20de%20pagamento.">
+        Tirar uma dúvida
+        <svg class="icon-arrow-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="faq__list">
+      <details class="faq__item" open>
+        <summary>
+          <span>O F-400 funciona com qual tipo de gás?</span>
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </summary>
+        <p>O modelo pode ser fornecido para GLP ou gás natural. Confirme a configuração desejada no momento do pedido.</p>
+      </details>
+      <details class="faq__item">
+        <summary>
+          <span>Qual tamanho de pizza ele assa?</span>
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </summary>
+        <p>O F-400 comporta pizzas de até 400 mm de diâmetro e possui lastro de 454 mm.</p>
+      </details>
+      <details class="faq__item">
+        <summary>
+          <span>Vocês entregam em todo o Brasil?</span>
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </summary>
+        <p>Sim. O valor do frete e o prazo são calculados conforme o CEP no atendimento.</p>
+      </details>
+      <details class="faq__item">
+        <summary>
+          <span>Como funcionam as condições de pagamento?</span>
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </summary>
+        <p>Você recebe 10% de desconto no Pix ou pode pagar em até 12x no cartão. Consulte as condições vigentes com nosso time.</p>
+      </details>
+      <details class="faq__item">
+        <summary>
+          <span>O produto está disponível imediatamente?</span>
+          <span class="faq__toggle" aria-hidden="true"></span>
+        </summary>
+        <p>Trabalhamos com pronta entrega sujeita à disponibilidade. Confirme o estoque pelo WhatsApp.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="assets/bello-volpi-logo-sm.png" alt="Bello Volpi Fornos" width="56" height="56">
+      <div>
+        <p class="footer__name">FORNOS BELLO VOLPI</p>
+        <p class="footer__tagline">A melhor pizza, no menor tempo.</p>
+      </div>
+    </div>
+    <div class="footer__col">
+      <p class="footer__label mono">ATENDIMENTO</p>
+      <a href="https://wa.me/5511940128477">(11) 94012-8477</a>
+      <p>São Caetano do Sul — SP</p>
+    </div>
+    <div class="footer__col">
+      <p class="footer__label mono">ACOMPANHE</p>
+      <a href="https://www.instagram.com/bellovolpifornos/" target="_blank" rel="noopener">@bellovolpifornos ↗</a>
+    </div>
+  </div>
+  <p class="footer__legal">© 2026 Bello Volpi Fornos. Todos os direitos reservados.</p>
+</footer>
+
+<a class="fab" href="https://wa.me/5511940128477?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20forno%20Bello%20Volpi%20F-400%20e%20gostaria%20de%20receber%20valores%2C%20frete%20e%20condi%C3%A7%C3%B5es%20de%20pagamento." aria-label="Falar no WhatsApp">
+  <svg class="icon-whatsapp" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.2.6 4.3 1.7 6.1L4 29l8.1-1.6c1.8.9 3.8 1.4 5.9 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3.9.9-4.2-.2-.4C5.8 17.9 5.3 16.5 5.3 15c0-5.9 4.8-10.7 10.7-10.7S26.7 9.1 26.7 15 21.9 24.8 16 24.8zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5S13 10 12.7 9.4c-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.2 3.4 5.4 4.7.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
