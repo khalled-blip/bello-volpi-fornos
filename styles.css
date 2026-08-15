@@ -237,7 +237,7 @@ p{ color: var(--cream-dim); max-width: var(--measure); }
 
 /* ==================== hero ==================== */
 .hero{ padding: clamp(7rem,14vw,9rem) var(--edge) clamp(3rem,6vw,5rem); position: relative; }
-.hero__grid{ max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem,5vw,5rem); align-items: center; }
+.hero__grid{ max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem,5vw,5rem); align-items: start; }
 
 .stamp{ position: relative; width: 118px; height: 118px; margin-bottom: 2rem; animation: stamp-spin 34s linear infinite; }
 @keyframes stamp-spin{ to{ transform: rotate(360deg); } }
