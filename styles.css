@@ -262,17 +262,19 @@ p{ color: var(--cream-dim); max-width: var(--measure); }
 .hero__subtitle{ font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--cream-dim); max-width: 46ch; margin-bottom: 2.2rem; }
 .hero__actions{ display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.75rem; }
 
-/* Explicit 2-column grid rather than flex-wrap: a wrap-based layout put a
-   border-left + padding-left on item 3 (FRETE) unconditionally, which reads
-   fine side-by-side but leaves an orphaned rule hanging off nothing once the
-   item wraps to its own row. Pinning FRETE to its own full-width row with a
-   top divider is correct at every width instead of only above one breakpoint. */
-.terms-strip{ display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--hairline); max-width: 46ch; }
-.terms-strip__item{ padding: 1rem 1.3rem 1rem 0; }
-.terms-strip__item:nth-child(2){ border-left: 1px solid var(--hairline); padding-left: 1.3rem; }
-.terms-strip__item:nth-child(3){
-  grid-column: 1 / -1; border-left: none; padding: 1rem 0 0;
-  border-top: 1px solid var(--hairline); margin-top: 0;
+/* Explicit grid rather than flex-wrap: a wrap-based layout put a border-left
+   on the last item unconditionally, which reads fine side-by-side but leaves
+   an orphaned rule hanging off nothing once an item wraps to its own row.
+   Three equal columns fit the available width comfortably above 560px; below
+   that the breakpoint switches the divider from left to top instead of
+   letting the grid wrap on its own and risk the same orphaned-border bug. */
+.terms-strip{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--hairline); }
+.terms-strip__item{ padding: 1rem 1.3rem; border-left: 1px solid var(--hairline); }
+.terms-strip__item:first-child{ border-left: none; padding-left: 0; }
+@media (max-width: 560px){
+  .terms-strip{ grid-template-columns: 1fr; }
+  .terms-strip__item{ border-left: none; padding: 1rem 0; border-top: 1px solid var(--hairline); }
+  .terms-strip__item:first-child{ border-top: none; }
 }
 .terms-strip dt{ font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); margin-bottom: .35rem; }
 .terms-strip dd{ margin: 0; font-size: .95rem; color: var(--cream); }
