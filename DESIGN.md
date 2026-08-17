@@ -1,186 +1,155 @@
 ---
 name: Bello Volpi F-400
-description: Professional gas pizza oven, presented as a precision instrument — dark catalog world, enamel red, spec-sheet honesty.
+description: Professional gas pizza oven, presented like a performance dashboard — light ground, one real brand red, live-looking metrics.
 colors:
-  ink: "#110f0d"
-  ink-2: "#18140f"
-  ink-3: "#211b14"
-  ink-4: "#2b241b"
-  cream: "#f4eee1"
-  cream-dim: "#d8cfbd"
-  steel: "#9a9188"
-  steel-2: "#6f6a62"
+  bg: "#faf8f4"
+  bg-alt: "#f2efe7"
+  surface: "#ffffff"
+  surface-2: "#f5f3ec"
+  ink: "#17140f"
+  ink-dim: "#57514a"
+  ink-faint: "#6e6759"
+  line: "#e7e2d6"
+  line-strong: "#d8d1c1"
   red: "#c23a24"
-  red-bright: "#e2502f"
-  red-deep: "#6f2213"
-  amber: "#e2954f"
-  led: "#ff5a3c"
-  # secondary material: the hero hang-tag reads as a real kraft-paper swing
-  # tag, so it carries its own small paper palette rather than the
-  # instrument ground — never used outside the tag.
-  kraft-paper: "#d9c48f"
-  kraft-ink: "#2c2213"
-  kraft-twine: "#8a7a52"
-  kraft-caption: "#4a3c22"
-  # secondary material: the nameplate's four corner rivets, a radial-gradient
-  # brushed-metal highlight/mid/shadow triad — never used outside the rivets.
-  rivet-highlight: "#d9d3c6"
-  rivet-mid: "#6b6459"
-  rivet-shadow: "#37322a"
+  red-bright: "#db4a30"
+  red-deep: "#9a2e1c"
+  green: "#1f7a54"
 typography:
   display:
-    fontFamily: "Big Shoulders Display, Arial Narrow, sans-serif"
-    fontSize: "clamp(2.1rem, 5.4vw, 6rem)"
+    fontFamily: "Sora, -apple-system, sans-serif"
+    fontSize: "clamp(2.1rem, 5vw, 4.6rem)"
     fontWeight: 700
-    lineHeight: 0.92
-    letterSpacing: "-0.01em"
+    lineHeight: 1.05
+    letterSpacing: "-0.02em"
   body:
-    fontFamily: "Archivo, -apple-system, sans-serif"
-    fontSize: "16px"
+    fontFamily: "Hanken Grotesk, -apple-system, sans-serif"
+    fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.6
   mono:
     fontFamily: "JetBrains Mono, ui-monospace, monospace"
     fontFeature: "tabular-nums"
-  # full rem scale used across UI text (see Typography section for role mapping)
   scale:
-    micro: "0.55rem"
-    2xs: "0.68rem"
-    xs: "0.75rem"
-    label: "0.8rem"
-    sm: "0.85rem"
-    base-tight: "0.95rem"
+    2xs: "0.75rem"
+    xs: "0.8125rem"
+    label-sm: "0.62rem"
+    sm: "0.875rem"
     base: "1rem"
-    md: "1.05rem"
-    lg: "1.35rem"
+    md: "1.0625rem"
+    ring-value: "1.15rem"
+    lg: "1.25rem"
     xl: "1.5rem"
-    # fluid clamp() endpoints used by headings/subtitles beyond the `display`
-    # role above — each is one named heading tier's own min/max, not a step
-    # meant to be picked standalone.
-    hero-subtitle-min: "1.05rem"
-    hero-subtitle-max: "1.2rem"
-    section-heading-max: "4rem"
-    hero-title-min: "2.75rem"
+    2xl: "2rem"
+    # fluid clamp() endpoints per heading tier, beyond the `display` role above
+    section-heading-min: "1.9rem"
+    section-heading-max: "3.4rem"
+    hero-title-min: "2.6rem"
+    spec-figure-min: "1.4rem"
+    spec-figure-max: "1.9rem"
 rounded:
   hairline: "1px"
-  sm: "3px"
-  md: "6px"
-  lg: "10px"
-  full: "50%"
+  xs: "4px"
+  sm: "8px"
+  md: "14px"
+  lg: "24px"
+  full: "999px"
 shadows:
-  xs: "0 1px 0 rgba(0,0,0,.2)"
-  sm: "0 1px 2px rgba(0,0,0,.6)"
-  md: "0 18px 34px -14px rgba(0,0,0,.6)"
-  lg: "0 30px 60px -24px rgba(0,0,0,.65)"
-  xl: "0 40px 80px -30px rgba(0,0,0,.7)"
-  inset-highlight: "inset 0 1px 0 rgba(255,255,255,.06)"
-  inset-shade: "inset 0 -1px 0 rgba(0,0,0,.4)"
+  sm: "0 1px 2px rgba(23,20,15,.06), 0 1px 1px rgba(23,20,15,.05)"
+  md: "0 10px 26px -10px rgba(23,20,15,.16)"
+  lg: "0 30px 60px -20px rgba(23,20,15,.2)"
 spacing:
   edge: "clamp(1.25rem, 4vw, 4rem)"
 components:
   button-primary:
     backgroundColor: "{colors.red}"
-    textColor: "{colors.cream}"
+    textColor: "#ffffff"
     rounded: "{rounded.sm}"
-    padding: "0.9em 1.5em"
+    padding: "0.85em 1.4em"
   button-primary-hover:
     backgroundColor: "{colors.red-bright}"
   button-ghost:
-    backgroundColor: "transparent"
-    textColor: "{colors.cream}"
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.sm}"
-    padding: "0.9em 1.5em"
+    padding: "0.85em 1.4em"
 ---
 
 # Design System: Bello Volpi F-400
 
 ## Overview
 
-**Creative North Star: "The Instrument Catalog"**
+**Creative North Star: "The Performance Dashboard"**
 
-Bello Volpi sells a professional gas oven into a market that defaults to warm bakery-lifestyle photography, rounded friendly cards, and an orange gradient hero — the category's own visual cliché. This system refuses that arrangement and instead treats the F-400 the way a premium equipment catalog (espresso machinery, kitchen instrumentation) treats its hardware: dramatic single-source lighting on a near-black ground, a spec sheet read like a datasheet, and the oven's own physical control panel — its analog pressure gauge, its digital LED readout, its circular workshop badge — reused as the site's own iconography rather than invented from scratch.
+Pizza-oven marketing defaults to one of two moods: warm bakery lifestyle photography, or — our own prior pass on this project — a dark industrial-catalog mood board. Both were refused for this redesign. The F-400's actual argument is a number ("menor tempo," ready in ≤2 minutes) aimed at a buyer comparing equipment mid-shift, not browsing for inspiration. So the system borrows the register a modern analytics or ops product uses for its *own* marketing site: a light, confident ground; one real brand color used with intent; specs and comparisons presented as live-looking stat tiles a buyer can scan in seconds.
 
-The system is raised by the officina/workshop-badge language already true in the brand's existing logo (a dotted-ring circular badge, tracked small caps, brush-script signature) and grounded throughout in the oven's literal hardware: the gauge motif that tracks scroll progress, the LED-red glow on the spec numbers, the rivets on the "nameplate" panel. Nothing here is decorative technicality — every technical device on the page has a literal counterpart photographed on the physical product.
+A circular progress-ring is the one recurring signature device — first as the hero's "≤2 min" bake-cycle stat, echoed in miniature inside the feature grid. It is a design metaphor for a printed spec, never a claim that the oven has telemetry or connectivity it doesn't have; copy never implies "live" or "monitorado" in the literal IoT sense.
 
 **Key Characteristics:**
-- Near-black instrument ground, one committed enamel red (never a second saturated hue)
-- Condensed industrial display face for headlines; tabular monospace exclusively for measured/technical figures, never as a "tech" costume
-- Real product photography at dramatic scale, not thumbnails
-- Spec-sheet and nameplate conventions (rivets, hairline rules, tabular data) standing in for card grids
-- Commerce stays a WhatsApp conversation — no price ever renders on-page
+- Warm off-white ground, near-black ink, one real brand red carrying every action — never a second saturated color for CTAs
+- A restrained status-green, scoped only to availability indicators (the "pronta entrega" pill), never used on a clickable element
+- Sora for display (geometric, confident numerals), Hanken Grotesk for body/UI (legible, distinct from the default AI-site Inter/Geist/Space-Grotesk cluster), JetBrains Mono reserved for measured figures only
+- Rounded, soft-shadowed cards (8/14/24px) — a full material break from the prior hairline-and-rivet instrument grammar
+- Real product photography framed inside a contained "device card," never full-bleed
+- Commerce stays a WhatsApp conversation — no price ever renders on-page (unchanged product constraint)
 
 ## Colors
 
-Committed color strategy: a near-black charcoal ground carries the whole surface, with enamel red — the oven's own paint color, not a generic brand red — as the single saturated accent carrying CTAs, active states, and structural bands. Warm cream (never pure white) carries text; brushed-steel grey carries secondary/meta text tinted from the same warm hue family, never plain gray. Amber and LED-red are reserved for glow/active micro-states (focus rings, the gauge needle, count-up numbers) and never used as base color.
+Committed strategy: a warm off-white ground (never stark white) carries the page; near-black ink carries text; the oven's real red — unchanged from the product's actual paint color — is the single action/brand accent, used for every button, link-hover, and CTA. A second color, a muted status-green, exists but is scoped exclusively to "available/ready" indicators (the pronta-entrega pill's dot); it never appears on a button or link, so a visitor is never unsure which color means "click me."
 
 | Role | Token | Value | Usage |
 |---|---|---|---|
-| Ground | `ink` | `#110f0d` | Page background |
-| Panel | `ink-2` / `ink-3` / `ink-4` | `#18140f` / `#211b14` / `#2b241b` | Section and card panels, nameplate gradient |
-| Primary text | `cream` | `#f4eee1` | Headings, body |
-| Secondary text | `cream-dim` / `steel` | `#d8cfbd` / `#9a9188` | Subheads, meta, labels |
-| Accent | `red` / `red-bright` | `#c23a24` / `#e2502f` | CTAs, links, active states, hover |
-| Accent deep | `red-deep` | `#6f2213` | Pressed states |
-| Highlight | `amber` | `#e2954f` | Focus ring only |
-| Readout | `led` | `#ff5a3c` | Spec-sheet count-up glow only |
-
-Two secondary materials sit outside this ground palette and are never used past their one prop: the hang-tag's **kraft paper** family (`kraft-paper` / `kraft-ink` / `kraft-twine` / `kraft-caption`) makes it read as a real swing tag rather than a UI card, and the nameplate's **rivet** triad (`rivet-highlight` / `rivet-mid` / `rivet-shadow`) is the radial-gradient highlight/mid/shadow of four brushed-metal corner rivets.
+| Ground | `bg` | `#faf8f4` | Page background |
+| Ground alt | `bg-alt` | `#f2efe7` | Alternating sections (compact, footer) |
+| Surface | `surface` / `surface-2` | `#ffffff` / `#f5f3ec` | Cards, panels |
+| Primary text | `ink` | `#17140f` | Headings, body |
+| Secondary text | `ink-dim` / `ink-faint` | `#57514a` / `#6e6759` | Subheads, meta, labels |
+| Border | `line` / `line-strong` | `#e7e2d6` / `#d8d1c1` | Card borders, dividers |
+| Accent | `red` / `red-bright` | `#c23a24` / `#db4a30` | Every CTA, link hover, active state |
+| Accent deep | `red-deep` | `#9a2e1c` | Button pressed state |
+| Status | `green` | `#1f7a54` | Availability indicator only — never on an action |
 
 ## Typography
 
-Three families, each functionally justified rather than decorative: **Big Shoulders Display** (condensed industrial grotesk) carries every heading — its steelworks-adjacent character matches an equipment brand without leaning on an overused "editorial serif" or "SaaS geometric sans" default. **Archivo** carries body copy and UI labels — a technical, warm-enough grotesk with a full weight range. **JetBrains Mono** is reserved exclusively for measured or tabular content: spec-sheet figures, commercial terms (10%, 12x), the gauge label, the hang-tag countdown — never used as a generic "technical" costume on prose.
+Three families: **Sora** carries every heading — a geometric grotesk with confident numerals, distinct from the category's warm-serif or industrial-mono defaults. **Hanken Grotesk** carries body and UI copy — legible and warm, chosen specifically to avoid Inter/Geist/Space Grotesk/Plus Jakarta Sans, the small set of faces every AI-generated interface converges on. **JetBrains Mono** is reserved for measured or tabular content only: spec-sheet figures, commercial terms, the device card's stat chips.
 
-Fixed rem scale (`typography.scale` in the frontmatter), reused consistently rather than picked ad hoc per component:
-
-| Step | Value | Used for |
-|---|---|---|
-| `micro` | `.55rem` | gauge label, nav sub-wordmark, nameplate unit suffix |
-| `2xs` | `.68rem` | field labels: terms strip, nameplate `dt`, footer label, ticket stub `dt` |
-| `xs` | `.75rem` | statement eyebrow, compare-table head, ticket eyebrow, faq intro copy |
-| `label` | `.8rem` | small button, callout index numeral, nameplate model line |
-| `sm` | `.85rem` | secondary meta: footer tagline/nameplate foot/ticket note/checklist sub-line |
-| `base-tight` | `.95rem` | primary button label, body copy inside constrained columns (callouts, table cells, faq answers) |
-| `base` | `1rem` | checklist headline |
-| `md` | `1.05rem` | nav wordmark, stamp center mark, large button, faq summary, footer name, nameplate brand, ticket stub value |
-| `lg` | `1.35rem` | callout heading |
-| `xl` | `1.5rem` | hang-tag countdown value |
-
-Fluid display steps (hero title, section headings, hero subtitle, nameplate figures) stay `clamp()`-driven rather than fixed — see the `display` token and the individual `clamp()` calls in `styles.css`. Two SVG-only labels (the circular stamp's curved text, `10.5px`/`9px`) are set in raw px because they live inside the stamp's own `viewBox` coordinate space, not the page's rem grid — sized to that badge, not the type ramp.
-
-Display sizes clamp between `2.1rem` and `6rem` (the craft ceiling); body measure stays 62ch; tracking never drops below the `-0.04em` floor.
+Fixed rem scale (`typography.scale`), reused everywhere via CSS custom properties rather than picked ad hoc: `2xs` .75rem (field labels, footer legal), `xs` .8125rem (buttons, nav links, spec labels), `label-sm` .62rem (compare badge, ring-stat/chip-stat captions — the smallest live-metric labels), `sm` .875rem (secondary body copy, table cells), `base` 1rem (body default), `md` 1.0625rem (nav wordmark, button-large, faq summary), `ring-value` 1.15rem (the hero ring's own bake-time number, one size between `md` and `lg`), `lg` 1.25rem (bento tile headings, chip-stat value), `xl`/`2xl` 1.5rem/2rem (reserved headroom). Fluid display steps (hero title, section h2, spec-card figures) stay `clamp()`-driven; their endpoints are the `*-min`/`*-max` scale entries.
 
 ## Layout
 
-Full-bleed sections alternate density deliberately: a dense hero, a quiet full-width statement, a dense annotated-diagram section, alternating photo/copy blocks, a nameplate panel, a data table, a ticket-style commercial block, and an FAQ — one consistent spacing rhythm throughout (more space above a heading than below it), never a uniform repeating card grid as the page's structural spine. Breakpoints: mobile burger nav below 860px, single-column stacking below ~900–980px per section, nameplate grid drops from 3 to 2 columns below 640px.
+Alternating density: a dense two-column hero (copy + device card), a 3-stat commercial row, a quiet centered statement, a bento feature grid (one wide "hero" tile + three supporting tiles), a photo/copy block, a spec-sheet card, a comparison matrix, a dark commercial CTA card (the one intentional inversion — near-black on the light system, for contrast and closure), an FAQ, and a light footer. Breakpoints: mobile burger nav below 900px, hero/compact/bento stacking below 900px, stat-row/spec-grid dropping to fewer columns below 720/640px.
 
 ## Elevation & Depth
 
-Flat/matte for structural panels (nameplate, ticket) — depth is signaled through material (brushed-metal gradient texture, rivets, hairline rules) rather than shadow. Photography and floating elements carry soft, offset shadows on a five-step ramp (`shadows` in the frontmatter, `xs`→`xl`) scaled to the element's own size — a tiny rivet gets `sm`, the hero photo frame gets `xl` — never a zero-offset colored glow standing in for depth. Panels needing a lit top edge (nameplate, rivets) add `inset-highlight`/`inset-shade` rather than a border.
+Warm-tinted shadows only (`rgba(23,20,15,…)`, never pure black) on a three-step ramp: `sm` for resting cards and buttons, `md` for hover lift, `lg` for the device card and the dark CTA card — the two most "floating" elements on the page. Flat, border-only treatment (1px `line`) for lower-emphasis panels (spec card, bento tiles at rest) so shadow always signals genuine elevation, not decoration.
 
 ## Shapes
 
-Fixed radius scale (`rounded` in the frontmatter): `hairline` (1px, only for capping thin decorative strokes like the FAQ toggle bars — not a shape radius), `sm` (3px, controls, buttons, focus ring), `md` (6px, mid-size panels, scrollbar thumb), `lg` (10px, large panels: nameplate, ticket), `full` (50%, circles and pills — badge, dots, avatars, FAB). No arbitrary radius outside this scale.
+Rounded scale (`rounded`): `hairline` 1px (only for capping thin decorative strokes, like the FAQ toggle's plus/minus bars — not a shape radius), `xs` 4px (focus ring, scrollbar thumb), `sm` 8px (buttons, small controls), `md` 14px (mid panels: device photo inset, chip corners), `lg` 24px (cards: device card, bento tiles, spec card, comparison table, dark CTA card), `full` 999px (pills, dots, avatars, FAB). A deliberately softer, larger-radius language than the prior system's tight 3–10px instrument grammar — part of the flip from "industrial hardware" to "modern software product."
 
 ## Components
 
-- **Buttons**: primary = solid enamel red, cream text, small radius, offset colored shadow; hover brightens and lifts 1px; ghost = transparent with hairline border, brightens border on hover. No pill shapes, no gradients.
-- **Nav**: fixed, transparent over the hero, gains an always-present blurred dark backdrop layer (revealed by opacity, not by toggling `background`/`backdrop-filter` directly on the nav element — see `styles.css` comment for why) past 12px of scroll.
-- **Callouts** (feature list): a divided list with leader-style icon + index + heading + copy, not boxed cards — deliberately refuses the icon-card-grid default.
-- **Nameplate** (spec sheet): a riveted brushed-metal panel; tabular mono figures; count up with an LED-red flicker the first time it scrolls into view.
-- **Comparison table**: real `<table>`, F-400 column tinted with the red-tint token, never a colored border-left accent.
-- **Ticket** (commercial CTA): two-column panel with a dashed perforation and circular "punch" cutouts, ledger-style term stub — borrows the register of an order ticket rather than a generic pricing card, since price itself never renders.
-- **FAQ**: native `<details>/<summary>` accordion, drawn plus/minus toggle (two lines rotating), no default marker.
-- **Gauge scroll indicator**: fixed bottom-left semi-circular dial with a needle that sweeps 0–180° across total scroll progress, labeled `kgf/cm²` after the oven's own pressure gauge; fades out near the footer.
+- **Buttons**: primary = solid red, white text, 8px radius, soft shadow, lifts 1px on hover; ghost = white surface with a border, darkens border on hover. 44px minimum height throughout (touch target).
+- **Status pill**: a rounded-full chip with a small pulsing dot — green for availability, red for "condições especiais." The dot is the only continuously-animated element carrying no text, by design: earlier work on this project animated a whole badge including its curved text labels, which made them unreadable for most of the rotation; here motion never touches anything a visitor needs to read.
+- **Device card**: the hero's single self-contained visual — label row, the real product photo (contained, not full-bleed), a footer of two stat chips (the ring stat + a plain figure). Replaces the prior build's separate floating hang-tag prop with one coherent card.
+- **Ring stat**: an SVG circular progress ring, continuously animated (a data-metaphor for the "≤2 min" spec, not a live-data claim), echoed at smaller scale inside the bento's primary tile in a muted tone so the hero's red ring stays the one full-saturation instance.
+- **Bento grid**: one wide primary tile (icon, heading, copy, mini ring) plus three equal supporting tiles — a deliberate asymmetric composition rather than four identical icon cards.
+- **Comparison matrix**: a real `<table>` styled as a SaaS feature-comparison grid — check/x glyphs per row, the F-400 column tinted and topped with a "Recomendado" pill.
+- **Spec card**: a single bordered card holding the technical figures as a definition-list grid, mono figures, read like a spec sheet or API reference rather than a printed nameplate.
+- **Dark CTA card**: the one near-black surface in the whole system — a deliberate inversion that reads as "closing argument," with a light ledger-style terms list beside the main copy.
+- **FAQ**: native `<details>/<summary>` accordion, drawn plus/minus toggle, 44px-minimum tap row.
 
 ## Do's and Don'ts
 
 **Do**
-- Reuse the oven's real photography and real logo; treat both as fixed brand assets.
-- Keep every commercial CTA routed to the same pre-filled WhatsApp message used on the source site.
-- Keep monospace scoped to measured/tabular content only.
-- Keep the red accent to a single hue family (no secondary saturated color).
+- Keep red the only actionable color; every button, every link-hover, every active state.
+- Keep green scoped to availability/status only — never a button, never a link.
+- Reuse the oven's real photography and logo; keep every commercial CTA routed to the same pre-filled WhatsApp message.
+- Keep any grid that could wrap (stat rows, comparisons) built as an explicit CSS grid with a real breakpoint — never `flex-wrap` plus an adjacent-sibling divider, which orphans its own border the moment an item wraps alone (a real bug fixed twice on this project before this rebuild).
+- On any `<img>` using both an HTML `width`/`height` attribute and a CSS `aspect-ratio`, always set `height: auto` in the same rule — otherwise the browser treats both dimensions as definite and silently ignores the ratio (another real bug from the prior build).
 
 **Don't**
-- Don't show a final price, a cart, or a checkout flow anywhere — commerce is a WhatsApp conversation by product design, not a missing feature.
-- Don't introduce a second saturated accent color (e.g. a green "WhatsApp brand" button) — the WhatsApp glyph icon carries that recognition inside the existing red system instead.
-- Don't reintroduce kickers/eyebrows above headings, section numbers as decoration, or uniform icon-card grids — these were deliberately refused in favor of the instrument-catalog grammar.
+- Don't show a final price, cart, or checkout — commerce stays a WhatsApp conversation.
+- Don't imply the oven has live/connected telemetry — the ring-stat motif is a design device for a printed spec, not a smart-oven claim the product can't back up.
+- Don't animate any element that carries text a visitor needs to read continuously — only shape/data-viz elements (the ring, the status dot) get continuous motion.
+- Don't reintroduce a full-bleed dark ground, rivets, or hairline-instrument chrome — that was the prior world, kept only as this file's anti-reference, not a blend target.

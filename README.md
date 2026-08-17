@@ -16,9 +16,9 @@ Then open `http://localhost:8000/index.html`.
 
 - `index.html` — the page
 - `styles.css` — all styling (self-hosted fonts, no external CSS)
-- `script.js` — nav state, scroll-progress gauge, spec-sheet count-up
+- `script.js` — nav scrolled state, mobile menu toggle
 - `assets/` — real product photography and logo (from the brand's own assets), plus web-optimized variants
-- `fonts/` — self-hosted Big Shoulders Display, Archivo, JetBrains Mono (woff2)
+- `fonts/` — self-hosted Sora, Hanken Grotesk, JetBrains Mono (woff2)
 - `PRODUCT.md` — product/business context this build is grounded in
 - `DESIGN.md` — the visual system this build committed to (palette, type, components, do's/don'ts)
 
