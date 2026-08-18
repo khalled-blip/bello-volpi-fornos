@@ -192,7 +192,9 @@ p{ color: var(--ink-dim); max-width: var(--measure); }
     display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
     background: var(--surface); padding: 1.5rem var(--edge) 2rem; border-bottom: 1px solid var(--line); gap: 1.2rem;
   }
-  .nav.is-open .nav__cta{ display: inline-flex; position: absolute; top: calc(100% + 220px); left: var(--edge); }
+  /* Lives inside .nav__links now, so it opens in the dropdown's own flow —
+     no fixed pixel offset to guess where the link list ends. */
+  .nav.is-open .nav__cta{ display: inline-flex; margin-top: .4rem; align-self: flex-start; }
 }
 
 /* ==================== hero ==================== */
@@ -395,7 +397,10 @@ p{ color: var(--ink-dim); max-width: var(--measure); }
   position: fixed; right: clamp(1.1rem,3vw,2rem); bottom: clamp(1.1rem,3vw,2rem); z-index: 55;
   width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
   background: var(--red); color: #fff; box-shadow: var(--shadow-lg);
-  transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out);
+  transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out), opacity .25s var(--ease-out);
 }
 .fab .icon-whatsapp{ width: 26px; height: 26px; }
 .fab:hover{ transform: translateY(-3px) scale(1.04); }
+/* Hidden while the hero (which already has its own WhatsApp CTA) is on screen —
+   avoids the fixed FAB overlapping the hero device card and duplicating the same action. */
+.fab.is-hidden{ opacity: 0; pointer-events: none; }

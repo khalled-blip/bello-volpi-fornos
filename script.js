@@ -24,4 +24,15 @@
       });
     });
   }
+
+  /* ---------- fab: hide while the hero (own WhatsApp CTA) is in view ---------- */
+  const fab = document.querySelector('.fab');
+  const hero = document.querySelector('.hero');
+  if (fab && hero && 'IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => fab.classList.toggle('is-hidden', entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    heroObserver.observe(hero);
+  }
 })();
